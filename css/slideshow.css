@@ -1,0 +1,7 @@
+#slideshow .slides{position:relative; margin: 0 auto; width: 450px;}
+html.js #slideshow .slides img{position:absolute;}
+
+#slideshow .next, #slideshow .prev{position:absolute; top:50%; margin-top:-0.5em; width:40px; font-size:32px; text-decoration:none;}
+#slideshow .next{right:-50px; padding-left:10px;}
+#slideshow .prev{left:-50px; padding-right:10px;
+text-align:right;}

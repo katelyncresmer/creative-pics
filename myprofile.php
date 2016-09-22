@@ -1,0 +1,113 @@
+<?php
+session_start();
+include('includes/functionlib.php');
+
+$user=$_SESSION['user'];
+
+$results=run_my_query("SELECT * FROM users WHERE username='$user'");
+$profile=run_my_query("SELECT * FROM profile WHERE username='$user'");
+		
+		$results -> data_seek(0);
+		
+		while($row=$results->fetch_assoc()){
+    $id =$row['ID'];
+    $username=$row['username'];
+    $name=$row['name'];
+		$email=$row['email'];
+		$pass=$row['password'];
+			}
+	
+		
+		$profile -> data_seek(0);
+		
+		while($row=$profile->fetch_assoc()){
+    	$about=$row['about'];
+		$web=$row['website'];
+		$picture=$row['picture'];
+			}
+			
+
+	
+?><!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Creative Pics</title>
+<link rel="stylesheet" href="css/reset.css"/>
+<link rel="stylesheet" href="css/style.css"/>
+<link rel="stylesheet" href="css/shadowbox.css"/>
+<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Expletus+Sans' rel='stylesheet' type='text/css'>
+<script src="js/shadowbox.js"></script>
+<script type="text/javascript">
+Shadowbox.init({
+language: 'en',
+players: ['img', 'html', 'iframe', 'qt', 'wmp', 'swf', 'flv']
+});
+</script>
+<link href="img/logo.png" type="image/x-icon" rel="icon"/>
+<!--[if IE]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+
+<body id="dashhome">
+<header>
+  <img class="thumb" src="img/logo.png"/>
+  <nav>
+    <ol>
+      <li><a href="dashboard.php">Dashboard</a></li>
+      <li><a href="upload.php">Upload</a></li>
+      <li><a href="live.php">Live Feed</a></li>
+      <li><a href="bugs.php">Report Bugs</a></li>
+      <li><a href='myprofile.php'>Profile</a></li>
+      <li><a href="account.php">Account</a></li>
+      <li><a href='logout.php'>Logout</a></li>
+    </ol>
+  </nav>
+</header>
+<div class="bodycontain">
+     
+<h1 id="dashh"><center><?php echo $_SESSION['user']; ?>'s Profile</center></h1>
+<div class="profilepic"><img class="profilepic" src="users/<?php echo $user; ?>/img/<?php echo $picture; ?>" alt="profile picture"><a rel="shadowbox" href='edit-pic.php'>Edit Profile Picture</a></div>
+<div class="aboutme">
+<h3><center><?php echo $name; ?></center></h3>
+<a rel="shadowbox" href='edit-name.php'><center>Edit Name</center></a>
+<h5><center><?php echo $_SESSION['user']; ?></center></h5>
+
+<h3><strong>About <?php echo $name; ?></strong></h3>
+<a rel="shadowbox" href='edit-about.php'>Edit About</a>
+<a class="userweb" href="http://<?php echo $web; ?>" target="_blank"><?php echo $web; ?></a>
+<a rel="shadowbox" href='edit-web.php'>Edit Website</a>
+<p class="aboutdescr"><?php echo $about; ?></p>
+</div>
+
+			
+<div class="userstream">
+<h2 style="background:#181C25;padding:1%;width:100%;">Stream</h2>
+<?php	
+$stream=run_my_query("SELECT * FROM stream WHERE username='$user' ORDER BY id DESC");
+		$stream -> data_seek(0);
+		
+		while($row=$stream->fetch_assoc()){
+    $pic=$row['pic'];
+		$cap=$row['cap'];
+		
+		?>
+		<section>
+		<img class="prostrepic" src="users/<?php echo $user; ?>/img/<?php echo $pic; ?>">
+		<p><?php echo $cap; ?></p>
+		</section>
+<?php
+}
+?>
+</div>
+</div>
+<footer>
+<a rel="shadowbox"  href="about.php">About Creative Pics</a>
+<a rel="shadowbox"  href="contact.php">Contact Us</a>
+<a rel="shadowbox"  href="updates.php">Updates and Added Features</a>
+<h6>&copy; Katelyn Hare 2014</h6>
+
+</footer>
+</body>
+</html>

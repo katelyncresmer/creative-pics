@@ -1,0 +1,138 @@
+/*http://katelynhare.com/labs/tools/startingcss
+  By: Katelyn Hare
+  v1.0 | 20140308
+  License: none (public domain)
+*/
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Expletus+Sans);
+html{background:#181C25;}
+a:hover{cursor:pointer;}
+body{background:#181c25; font-family:sans-serif;}
+
+::-moz-selection{}
+::selection{}
+.error{color:red;}
+
+/* Everything in the header */
+header{background:url(../img/bg.jpg); background-size:contain; margin:3% auto; clear:both;}
+
+/* Navagation */
+nav{display:inline-block; width:70%; height:50px; margin-left:5%;}
+nav a{color:white; text-decoration:none;}
+nav ol li{display:inline-block; margin:0 auto; width:10%;	padding:10px;	text-align:center; color:black; text-decoration:none;	transition:color .5s ease, background-color .5s ease;}
+nav ol li:hover{background-color:black; color:white;}
+
+/* Everything in the body */ 
+#home{width:55%; margin:0 auto; margin-top:7%;}
+#aboutbody{background:white; padding:3%; line-height:1.5em;}
+#aboutbody h1{padding:1%;}
+#aboutbody li{list-style:disc;}
+#loghome{width:99%; margin:0 auto;}
+#loghome .logf{padding:1%; float:left;}
+.logf{display:inline-block;}
+#livefeed{ width:90%;margin:0 auto;}
+.livesec{ margin:2%; width:100%;}
+.aboutme,  .aboutdescr, .userstream{width:60%; margin:0 auto; margin-top:2%;}
+#dashhome{background:white; height:auto; margin-bottom:5%; /*width:90%; margin:0 auto;*/}
+.bodycontain{width:70%; margin:0 auto;}
+.bodycontain section{border-bottom:thin solid #ccc; padding:1%; line-height:1.5em; overflow:hidden;}
+.aboutme a{display:block;}
+#picsec{/*width:60%; margin:0 auto;*/}
+.picdiv2{padding:3% 0; border-bottom:thin solid #ccc;}
+#picdiv{border:thin solid #ccc; padding:3%;}
+
+/* Images */
+img{margin:2%;}
+.thumb{width:100px; margin:1% 1%; vertical-align: middle;}
+.dash{width:200px; margin:1% 1%; vertical-align: middle; float:left;}
+.profilepic{margin:2%; display:block; max-width:300px; max-height:300px; margin-left:auto; margin-right:auto;}
+.livepic{max-width:300px;}
+.prostrepic{max-width:200px; margin:2%;}
+#picsec img{display:block; margin-left: auto; margin-right: auto; width:100%;}
+#slideshow{width:50%; margin-right:100px;float:left;}
+#slideshow img{width:100%; max-width:900px;}
+
+/* Forms */
+form{}
+input{}
+input[type=submit]{padding:4px; height:40px;  font-size:14px;}
+.logf form{display:block; }
+.logf input{height:30px; display:block;}
+.logf2 form{float:left;}
+.logf2 input{margin-top:4%; width:400px; height:40px;padding:5px; border-radius:5px; font-size:20px;}
+header .logf form{display:inline-block;}
+header .logf input{display:inline-block;}
+.bodycontain textarea{width: 50%; height: 100px; line-height:1.5em;	border: 2px solid #cccccc;padding: 5px;}
+.bodycontain form{margin-bottom:2%;}
+.livesec input[type=image]{float:left; margin-right:3%;}
+.linksubmit{background:none; border:none; display:inline-block; padding:0; color:#863ba4; text-decoration:none;}
+.linksubmit:hover{cursor:pointer;}
+
+/* Tables */
+table{width:50%;}
+tr{margin-top:2%; border:thin #ccc solid; padding:5%;}
+td{margin-right:2%; padding:5%;}
+
+/* Everything in the footer */
+footer{background:url(../img/bg.jpg); background-size:contain; margin:3% auto; clear:both; height:auto; padding:1%; overflow:hidden;}
+
+
+/* Typography */
+h1,h2,h3,h4,h5,h6,p,a,li{font-family:sans-sarif;}
+h1,h2,h3,h4,h5{font-family: 'Expletus Sans';}
+h6,p,a,li,ul,ol{font-family: 'Droid Sans';}
+h1{color:white; font-size:200%; width:40%; display:inline-block;}
+h2{display:inline-block; color:white; font-size:150%;}
+h3{font-size:18px; line-height:1.5em;}
+h4{}
+h5{}
+h6{color:#aaa; display:block; clear:both;}
+p{}
+a{}
+strong,b{font-weight:bold;}
+#dashh{color:black; width:100%; margin:2% 0;}
+#abouth2{color:black; margin:2% 0;}
+.t{font-size:18px;}
+.bodycontain a{color:#863ba4; text-decoration:none;}
+.bodycontain a:hover{text-decoration:underline;}
+.bodycontain h4{float:right; color:#aaa; font-size:14px;}
+footer a{ margin:2%; float:right; text-decoration:none; color:white;}
+.aboutdescr {width:100%; line-height:1.5em; }
+.userstream h3{background:#181C25;padding:1%;width:100%;display:inline-block; color:white; }
+.livesec h4{float:none; display:inline-block; text-align:right; float:right;}
+.livep{display:inline-block;}
+#pich{display:block; color:black; margin:0 auto;}
+
+/* Responsiveness */
+@media screen and (min-width:1250px){
+  /* desktop */
+  
+}
+@media screen and (min-width:1024px){
+  /* tablet landscape */
+  									
+	
+}
+@media screen and (min-width:768px){
+  /* tablet portrait */
+ 		
+}
+@media screen and (min-width:800px){
+  /* small tablet landscape */
+
+}
+@media screen and (min-width:600px){
+  /* small tablet portratit */
+ 	
+}
+
+@media screen and (min-width:480px){
+  /*  mobile landscape */
+
+}
+@media screen and (min-width:0px) and (max-width:599px){
+  /* mobile portrait */
+nav{display:block; width:100%; height:auto; margin-left:0;}
+nav ol li{display:block; margin:0 auto; width:100%;	padding:10px;	text-align:center; color:black; text-decoration:none;	transition:color .5s ease, background-color .5s ease;}
+.thumb{width:100px; margin:0; display:block; margin-right:auto; margin-left:auto;}
+footer a{ margin:0; float:none; display:inline-block; margin:10px;}
+}
